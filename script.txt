@@ -1,0 +1,308 @@
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "Steal A Turkish",
+    LoadingTitle = "Loading...",
+    LoadingSubtitle = "By wOmeRz    ",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = nil,
+        FileName = "StealConfig"
+    },
+    Discord = {Enabled = false, Invite = "", RememberJoins = true},
+    KeySystem = false
+})
+
+-- Uyarı Mesajı
+local player = game.Players.LocalPlayer
+local ScreenGui = Instance.new("ScreenGui", player.PlayerGui)
+local TextLabel = Instance.new("TextLabel", ScreenGui)
+TextLabel.Size = UDim2.new(0, 400, 0, 100)
+TextLabel.Position = UDim2.new(0.5, -200, 0.1, 0)
+TextLabel.Text = "MİNİ BİR SCRİPT AMA GÜZEL BİR SCRİPTTİR\nİYİ EĞLENCELER"
+TextLabel.TextScaled = true
+TextLabel.BackgroundTransparency = 0.5
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BorderSizePixel = 0
+
+-- 5 saniye sonra uyarı kaybolur
+delay(5, function()
+    TextLabel:Destroy()
+end)
+
+-- Ses Çalma (20 saniye)
+local sound = Instance.new("Sound", workspace)
+sound.SoundId = "rbxassetid://"
+sound.Volume = 1
+sound:Play()
+
+-- 20 saniye sonra durdur
+delay(20, function()
+    sound:Stop()
+    sound:Destroy()
+end)
+
+------------------------
+-- Sekmeler
+------------------------
+local PlayerTab = Window:CreateTab("PLAYER")
+local StealTab = Window:CreateTab("STEAL")
+
+------------------------
+-- PLAYER SEKME İŞLEVLERİ
+------------------------
+
+-- NOCLIP Toggle
+local noclipEnabled = false
+PlayerTab:CreateToggle({
+    Name = "NOCLIP",
+    CurrentValue = false,
+    Flag = "NoclipToggle",
+    Callback = function(value)
+        noclipEnabled = value
+        game:GetService("RunService").Stepped:Connect(function()
+            if noclipEnabled then
+                for _, part in pairs(player.Character:GetChildren()) do
+                    if part:IsA("BasePart") then
+                        part.CanCollide = false
+                    end
+                end
+            end
+        end)
+    end
+})
+
+-- SPEED Toggle
+local speedEnabled = false
+local speedValue = 36
+PlayerTab:CreateToggle({
+    Name = "Speed",
+    CurrentValue = false,
+    Flag = "SpeedToggle",
+    Callback = function(value)
+        speedEnabled = value
+        spawn(function()
+            while speedEnabled do
+                local humanoid = player.Character:FindFirstChild("Humanoid")
+                if humanoid then
+                    humanoid.WalkSpeed = speedValue
+                end
+                wait(0.1)
+            end
+            local humanoid = player.Character:FindFirstChild("Humanoid")
+            if humanoid then
+                humanoid.WalkSpeed = 16
+            end
+        end)
+    end
+})
+
+------------------------
+-- STEAL SEKME İŞLEVLERİ
+------------------------
+
+-- Fly GUI
+StealTab:CreateButton({
+    Name = "FLY GUI",
+    Callback = function()
+        loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Fly-Gui-V3-Turkish-48460"))()
+    end
+})
+
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "Steal A Turkish",
+    LoadingTitle = "Loading...",
+    LoadingSubtitle = "By wOmeRz    ",
+    ConfigurationSaving = {
+        Enabled = true,
+        FolderName = nil,
+        FileName = "StealConfig"
+    },
+    Discord = {Enabled = false, Invite = "", RememberJoins = true},
+    KeySystem = false
+})
+
+-- Uyarı Mesajı
+local player = game.Players.LocalPlayer
+local ScreenGui = Instance.new("ScreenGui", player.PlayerGui)
+local TextLabel = Instance.new("TextLabel", ScreenGui)
+TextLabel.Size = UDim2.new(0, 400, 0, 100)
+TextLabel.Position = UDim2.new(0.5, -200, 0.1, 0)
+TextLabel.Text = "Furius Hub"
+TextLabel.TextScaled = true
+TextLabel.BackgroundTransparency = 0.5
+TextLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BorderSizePixel = 0
+
+-- 5 saniye sonra uyarı kaybolur
+delay(5, function()
+    TextLabel:Destroy()
+end)
+
+-- Ses Çalma (20 saniye)
+local sound = Instance.new("Sound", workspace)
+sound.SoundId = "rbxassetid://"
+sound.Volume = 1
+sound:Play()
+
+-- 20 saniye sonra durdur
+delay(20, function()
+    sound:Stop()
+    sound:Destroy()
+end)
+
+------------------------
+-- Sekmeler
+------------------------
+local PlayerTab = Window:CreateTab("PLAYER")
+local StealTab = Window:CreateTab("STEAL")
+
+------------------------
+-- PLAYER SEKME İŞLEVLERİ
+------------------------
+
+-- NOCLIP Toggle
+local noclipEnabled = false
+PlayerTab:CreateToggle({
+    Name = "NOCLIP",
+    CurrentValue = false,
+    Flag = "NoclipToggle",
+    Callback = function(value)
+        noclipEnabled = value
+        game:GetService("RunService").Stepped:Connect(function()
+            if noclipEnabled then
+                for _, part in pairs(player.Character:GetChildren()) do
+                    if part:IsA("BasePart") then
+                        part.CanCollide = false
+                    end
+                end
+            end
+        end)
+    end
+})
+
+-- SPEED Toggle
+local speedEnabled = false
+local speedValue = 36
+PlayerTab:CreateToggle({
+    Name = "Speed",
+    CurrentValue = false,
+    Flag = "SpeedToggle",
+    Callback = function(value)
+        speedEnabled = value
+        spawn(function()
+            while speedEnabled do
+                local humanoid = player.Character:FindFirstChild("Humanoid")
+                if humanoid then
+                    humanoid.WalkSpeed = speedValue
+                end
+                wait(0.1)
+            end
+            local humanoid = player.Character:FindFirstChild("Humanoid")
+            if humanoid then
+                humanoid.WalkSpeed = 16
+            end
+        end)
+    end
+})
+
+------------------------
+-- STEAL SEKME İŞLEVLERİ
+------------------------
+
+-- Fly GUI
+StealTab:CreateButton({
+    Name = "FLY GUI",
+    Callback = function()
+        loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Fly-Gui-V3-Turkish-48460"))()
+     end    
+})    
+
+-- Variable to store saved position
+local savedStealPosition = nil
+
+-- Save Steal Position Button
+StealTab:CreateButton({
+    Name = "Save Steal Position",
+    Callback = function()
+        local character = player.Character
+        if character and character:FindFirstChild("HumanoidRootPart") then
+            savedStealPosition = character.HumanoidRootPart.CFrame
+            Rayfield:Notify({
+                Title = "Position Saved",
+                Content = "Your steal position has been saved successfully.",
+                Duration = 3,
+                Image = nil
+            })
+        end
+    end
+})
+
+-- Instant Steal Button (Teleport to saved position)
+StealTab:CreateButton({
+    Name = "Instant Steal",
+    Callback = function()
+        if savedStealPosition then
+            local character = player.Character
+            if character and character:FindFirstChild("HumanoidRootPart") then
+                character.HumanoidRootPart.CFrame = savedStealPosition
+            end
+        else
+            Rayfield:Notify({
+                Title = "No Position Saved",
+                Content = "Please save a position first using 'Save Steal Position'.",
+                Duration = 3,
+                Image = nil
+            })
+        end
+    end
+})
+
+-- PLATFORM SPAWN UNDER LOWER TORSO
+
+local platformPart -- Keep reference to the platform part
+local platformEnabled = false
+
+StealTab:CreateButton({
+    Name = "Platform",
+    Callback = function()
+        if platformEnabled then return end
+        platformEnabled = true
+
+        local character = player.Character or player.CharacterAdded:Wait()
+        local torso = character:FindFirstChild("LowerTorso") or character:FindFirstChild("HumanoidRootPart")
+
+        if not torso then
+            warn("Torso not found.")
+            return
+        end
+
+        -- Create platform
+        platformPart = Instance.new("Part")
+        platformPart.Size = Vector3.new(6, 1, 6)
+        platformPart.Anchored = true
+        platformPart.CanCollide = true
+        platformPart.Material = Enum.Material.Neon
+        platformPart.BrickColor = BrickColor.new("Bright red")
+        platformPart.Name = "TorsoPlatform"
+        platformPart.Parent = workspace
+
+        -- Update platform position every frame to follow the torso
+        game:GetService("RunService").RenderStepped:Connect(function()
+            if platformPart and platformEnabled and torso and torso.Parent then
+                platformPart.CFrame = torso.CFrame * CFrame.new(0, -3, 0)
+            end
+        end)
+    end
+})
+
